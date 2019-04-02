@@ -1,0 +1,38 @@
+TO DO:
+    Client:
+        Synchronization
+            DONE send "1" 
+            DONE send “name:ip_address:port:file1,...,fileN” - files on the node
+            DONE send n (number of peers on your record)
+            DONE send peer at a time “name:ip_address:port” 
+        Request
+            DONE send "0"
+            DONE receive "filename"
+            DONE receive "n" (number of words in the file)
+            DONE receive "word"
+            (we know how many files to receive from the synchronization phase)
+    Server:
+        Synchronization
+            DONE receive "1"
+            DONE receive “name:ip_address:port:file1,...,fileN” - files on the node
+                DONE save/update info
+            DONE receive n (number of peers)
+            DONE receive peer at a time “name:ip_address:port” 
+                DONE save all peers that are not known
+        Request
+            DONE receive "0"
+            DONE send "filename"
+            DONE send "n" (number of words in the file)
+            DONE send "word"
+            (until we send all the files)
+    DONE Check every connect statement
+    DONE Edit parse_file so that it returns char ** and words_count
+
+    Changed in node2:
+        Client
+
+    Changed in node1:
+        file parsing
+        server
+
+    DONE считать длину отправляемой строки и пихать в sendto
